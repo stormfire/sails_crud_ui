@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title><%=typeof title == 'undefined' ? 'Sails CRUD' : title %></title>
+    <link rel="stylesheet" href="/styles/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/style.css">
+  </head>
+
+  <body>
+
+    <%- partial('partials/header')%>
+
+    <div class="container">
+        <%- body %>
+    </div>
+
+    <%- partial('partials/footer')%>
+
+    <script src="/js/vendor/jquery-3.1.0.min.js"></script>
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+
+  </body>
+</html>

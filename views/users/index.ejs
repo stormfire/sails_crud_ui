@@ -1,0 +1,38 @@
+<div class='container'>
+	<h3>Users</h3>
+	<p>Listing all created users. Create a new user by clicking on Create User button</p>
+	<a class="btn btn-primary"  href='/users/new'>Create User</a>
+</div>
+
+<div class='container'>
+	<div class='messages'>
+		<p class='text-success v-center'><%= req.flash('success') %></p>
+		<p class='text-warning v-center'><%= req.flash('error') %></p>
+	</div>
+	<div class='table-responsive'>
+		<table class="table table-striped table-hover">
+		  <thead>
+		    <tr>
+		      <th>Firstname</th>
+		      <th>Lastname</th>
+		      <th>Email</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		   <% if (typeof users !== 'undefined' && users !== null) { %>
+		  	 <% for (var i = 0; i < users.length; i++) { %>
+			      <tr>
+			        <td><%- link_to(users[i].firstName, '/users/' + users[i].id) %></td>
+			        <td><%= users[i].lastName %></td>
+			        <td><%= users[i].email %></td>
+			        <td><%- link_to('Edit', 'users/'+ users[i].id + '/edit') %></td>
+			        <td><%- link_to('Delete', "/users/"+ users[i].id, { "data-method":"delete"}) %> </td>
+			      </tr>
+		  	  <% } %>
+		    <% } %>
+		  </tbody>
+		</table>
+	</div>
+</div>
+

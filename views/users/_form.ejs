@@ -1,0 +1,61 @@
+<div class="form-group row ">
+  <label class="col-lg-2 col-form-label" for="email">Email</label>
+  <div class="col-lg-10">
+    <div class='row'>
+      <div class='col-lg-8'>
+        <input type="email" value='<%= user.email %>' class="form-control" name="user[email]" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <% if(typeof errors !== 'undefined' && (typeof errors.email !== 'undefined' ) && errors.email !== null) { %>
+        <div class="error-txtmsg"> <p><%= errors.email %></p></div>
+        <% } %>
+      </div>
+      <small id="emailHelp" class="form-text text-muted col-lg-4 v-center">We'll never share your email with anyone else.</small>
+
+    </div>
+  </div>
+</div>
+
+<% if (typeof user !== 'undefined' && user !== null && (typeof user.id === 'undefined' || user.id === null) ) { %>
+<div class="form-group row">
+  <label class="col-lg-2 col-form-label" for="password">Password</label>
+  <div class="col-lg-10">
+    <input type="password" class="form-control" name='user[password]' id="password" placeholder="Password">
+    <% if(typeof errors !== 'undefined' && errors !== null && (typeof errors.password !== 'undefined' ) && errors.password !== null) { %>
+    <div class="error-txtmsg"> <p> <%= errors.password %></p></div>
+    <% } %>
+  </div>
+</div>
+<% } %>
+
+<div class="form-group row">
+  <label class="col-lg-2 col-form-label" for="firstName">First Name</label>
+  <div class="col-lg-10">
+    <input type='text' value='<%= user.firstName %>' class="form-control" name="user[firstName]" id="firstName" placeholder="Enter First Name">
+    <% if(typeof errors !== 'undefined' && errors !== null && (typeof errors.firstName !== 'undefined' ) && errors.firstName !== null) { %>
+    <div class="error-txtmsg"> <p><%= errors.firstName %></p></div>
+    <% } %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-lg-2 col-form-label" for="lastName">Last Name</label>
+  <div class="col-lg-10">
+    <input type='text' value='<%= user.lastName %>' class="form-control" name="user[lastName]" id="lastName" placeholder="Enter Last Name">
+    <% if(typeof errors !== 'undefined' && errors !== null && (typeof errors.lastName !== 'undefined' ) && errors.lastName !== null) { %>
+    <div class="error-txtmsg"> <p><%= errors.lastName %></p></div>
+    <% } %>  
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-lg-offset-2 col-lg-10">
+    <button type="submit" class="btn btn-primary">
+      <% if(typeof(user) !== 'undefined' && user !== null && (typeof (user.id) === 'undefined' || user.id === null) ) { %>
+      <%= 'Create' %>
+      <% } else { %>
+      <%= 'Update' %>
+      <% } %>
+    </button>
+    <a href='/' class="btn btn-default">Back</a>
+  </div>
+</div>
+

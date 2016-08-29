@@ -1,0 +1,7 @@
+<div class='container'>
+	<h3>Edit User</h3>
+	<form name='user' method='post' action='/users/<%= user.id %>' >		
+		<input type="hidden" name="user[id]" value="<%= user.id %>">
+		<%- partial('_form') %>
+	</form>
+</div>
